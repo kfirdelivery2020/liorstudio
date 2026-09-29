@@ -4,7 +4,13 @@
 מטרה עיקרית: אימות חשבון מפתח מקצועי (Organization) ב-Google Play.
 
 **האתר הזה אינו קשור לפרויקט Piki.** התיקייה עצמאית ונועדה לעבור לריפוזיטורי ציבורי משלה
-(מתוכנן: `liorstudio`, אירוח ב-GitHub Pages). אסור לייבא ממנה או אליה קוד של Piki.
+(`liorstudio`, אירוח ב-GitHub Pages). אסור לייבא ממנה או אליה קוד של Piki.
+
+## פרטי העסק
+- דומיין: `liorsstudio.com` (שים לב: שתי s ב-liorsstudio, שונה משם הריפוזיטורי `liorstudio`). עדיין לא מקושר ל-GitHub Pages — יקושר בהמשך.
+- אימייל ליצירת קשר: כרגע Gmail. אחרי חיבור הדומיין להחליף לכתובת בדומיין (למשל `contact@liorsstudio.com`) — גוגל מעדיפים אימייל בדומיין העסק.
+- טלפון: 050-321-2017
+- ריפוזיטורי: `kfirdelivery2020/liorstudio`, ענף `main`, אירוח GitHub Pages.
 
 ## אפליקציות של Lior Studio
 - **CourierInfo** — https://github.com/kfirdelivery2020/courierinfo-privacy (מדיניות פרטיות קיימת)
