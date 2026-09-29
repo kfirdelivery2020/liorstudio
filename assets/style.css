@@ -1,22 +1,27 @@
+/* ─── פונט (Rubik, מתארח מקומית) ─── */
+@font-face { font-family: "Rubik"; font-weight: 400; font-display: swap; src: url("fonts/rubik-400.ttf") format("truetype"); }
+@font-face { font-family: "Rubik"; font-weight: 500; font-display: swap; src: url("fonts/rubik-500.ttf") format("truetype"); }
+@font-face { font-family: "Rubik"; font-weight: 700; font-display: swap; src: url("fonts/rubik-700.ttf") format("truetype"); }
+
 /* ─── צבעים ─── */
 :root {
   --bg: #ffffff;
-  --surface: #f3f7f6;
-  --text: #14211f;
-  --muted: #566664;
-  --primary: #0c8574;
+  --surface: #f6f3fc;
+  --text: #1c1530;
+  --muted: #61587a;
+  --primary: #6d3fd0;
   --on-primary: #ffffff;
-  --border: #dbe5e3;
+  --border: #e4dcf3;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0e1615;
-    --surface: #16211f;
-    --text: #e8f0ee;
-    --muted: #9db0ad;
-    --primary: #38d3ba;
-    --on-primary: #04231e;
-    --border: #263634;
+    --bg: #130e20;
+    --surface: #1d1630;
+    --text: #efe9fb;
+    --muted: #b3a8cc;
+    --primary: #a982f5;
+    --on-primary: #1a0d3a;
+    --border: #322849;
   }
 }
 
@@ -27,7 +32,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font: 17px/1.6 "Rubik", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 a { color: var(--primary); }
 .wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; }
@@ -35,6 +40,9 @@ a { color: var(--primary); }
 /* ─── כותרת עליונה ─── */
 header.site {
   border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px);
 }
 header.site .wrap {
   display: flex; align-items: center; justify-content: space-between;
@@ -45,17 +53,37 @@ nav a { margin-inline-start: 20px; color: var(--muted); text-decoration: none; }
 nav a:hover { color: var(--primary); }
 
 /* ─── תוכן ─── */
-.hero { padding: 72px 0 48px; }
-.hero h1 { font-size: 40px; line-height: 1.15; margin: 0 0 16px; }
+.hero {
+  padding: 80px 0 56px;
+  background: radial-gradient(ellipse 60% 80% at 0% 0%, color-mix(in srgb, var(--primary) 14%, transparent), transparent 70%);
+}
+.hero h1 {
+  font-size: clamp(32px, 6vw, 48px); line-height: 1.12; margin: 0 0 18px; letter-spacing: -0.02em;
+  max-width: 720px;
+}
 .hero p { color: var(--muted); font-size: 19px; max-width: 620px; margin: 0; }
 section { padding: 40px 0; }
-h2 { font-size: 26px; margin: 0 0 20px; }
+h2 { font-size: 26px; margin: 0 0 20px; letter-spacing: -0.01em; }
+h2::after {
+  content: ""; display: block; width: 40px; height: 4px; margin-top: 10px;
+  border-radius: 2px; background: var(--primary);
+}
 h3 { margin: 0 0 6px; }
 
 .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
 .card {
   background: var(--surface); border: 1px solid var(--border);
-  border-radius: 16px; padding: 20px;
+  border-radius: 16px; padding: 22px;
+  border-top: 3px solid var(--primary);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--primary) 16%, transparent);
+}
+@media (prefers-reduced-motion: reduce) {
+  .card { transition: none; }
+  .card:hover { transform: none; }
 }
 .card p { margin: 0 0 10px; color: var(--muted); }
 .tag {
