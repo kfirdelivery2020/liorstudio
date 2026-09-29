@@ -5,23 +5,23 @@
 
 /* ─── צבעים ─── */
 :root {
-  --bg: #ffffff;
-  --surface: #f6f3fc;
-  --text: #1c1530;
-  --muted: #61587a;
-  --primary: #6d3fd0;
+  --bg: #fdfcff;
+  --surface: #f8f6fc;
+  --text: #2a2438;
+  --muted: #6e6884;
+  --primary: #7a62c4;
   --on-primary: #ffffff;
-  --border: #e4dcf3;
+  --border: #ece8f5;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #130e20;
-    --surface: #1d1630;
-    --text: #efe9fb;
-    --muted: #b3a8cc;
-    --primary: #a982f5;
-    --on-primary: #1a0d3a;
-    --border: #322849;
+    --bg: #16121f;
+    --surface: #1e1a29;
+    --text: #efebf7;
+    --muted: #b1a9c6;
+    --primary: #b8a4ea;
+    --on-primary: #1c1430;
+    --border: #302a40;
   }
 }
 
@@ -32,7 +32,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font: 17px/1.6 "Rubik", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font: 17px/1.65 "Rubik", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 a { color: var(--primary); }
 .wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; }
@@ -49,37 +49,54 @@ header.site .wrap {
   min-height: 64px; gap: 16px; flex-wrap: wrap;
 }
 .brand { font-weight: 700; font-size: 20px; color: var(--text); text-decoration: none; }
+.head-end { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
 nav a { margin-inline-start: 20px; color: var(--muted); text-decoration: none; }
+nav a:first-child { margin-inline-start: 0; }
 nav a:hover { color: var(--primary); }
+
+/* בורר שפה: עב | EN */
+.lang {
+  display: inline-flex; align-items: center; font-size: 14px;
+  border: 1px solid var(--border); border-radius: 999px; overflow: hidden;
+}
+.lang a, .lang b {
+  padding: 3px 12px; text-decoration: none; font-weight: 500; line-height: 1.6;
+}
+.lang b { background: var(--primary); color: var(--on-primary); }
+.lang a { color: var(--muted); }
+.lang a:hover { color: var(--primary); }
 
 /* ─── תוכן ─── */
 .hero {
   padding: 80px 0 56px;
-  background: radial-gradient(ellipse 60% 80% at 0% 0%, color-mix(in srgb, var(--primary) 14%, transparent), transparent 70%);
+  background: radial-gradient(ellipse 60% 80% at 0% 0%, color-mix(in srgb, var(--primary) 9%, transparent), transparent 70%);
+}
+html[dir="rtl"] .hero {
+  background: radial-gradient(ellipse 60% 80% at 100% 0%, color-mix(in srgb, var(--primary) 9%, transparent), transparent 70%);
 }
 .hero h1 {
-  font-size: clamp(32px, 6vw, 48px); line-height: 1.12; margin: 0 0 18px; letter-spacing: -0.02em;
-  max-width: 720px;
+  font-size: clamp(32px, 6vw, 46px); line-height: 1.15; margin: 0 0 18px; letter-spacing: -0.01em;
+  font-weight: 700; max-width: 720px;
 }
 .hero p { color: var(--muted); font-size: 19px; max-width: 620px; margin: 0; }
 section { padding: 40px 0; }
-h2 { font-size: 26px; margin: 0 0 20px; letter-spacing: -0.01em; }
+h2 { font-size: 26px; margin: 0 0 20px; font-weight: 500; }
 h2::after {
-  content: ""; display: block; width: 40px; height: 4px; margin-top: 10px;
-  border-radius: 2px; background: var(--primary);
+  content: ""; display: block; width: 32px; height: 3px; margin-top: 10px;
+  border-radius: 2px; background: color-mix(in srgb, var(--primary) 55%, transparent);
 }
-h3 { margin: 0 0 6px; }
+h3 { margin: 0 0 6px; font-weight: 500; }
 
 .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
 .card {
   background: var(--surface); border: 1px solid var(--border);
   border-radius: 16px; padding: 22px;
-  border-top: 3px solid var(--primary);
-  transition: transform .15s ease, box-shadow .15s ease;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
 }
 .card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px color-mix(in srgb, var(--primary) 16%, transparent);
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--primary) 40%, var(--border));
+  box-shadow: 0 8px 22px color-mix(in srgb, var(--primary) 10%, transparent);
 }
 @media (prefers-reduced-motion: reduce) {
   .card { transition: none; }
@@ -88,17 +105,45 @@ h3 { margin: 0 0 6px; }
 .card p { margin: 0 0 10px; color: var(--muted); }
 .tag {
   display: inline-block; font-size: 13px; padding: 2px 10px; border-radius: 999px;
-  background: var(--primary); color: var(--on-primary);
+  background: var(--primary); color: var(--on-primary); font-weight: 400;
 }
 .links a { margin-inline-end: 14px; font-size: 15px; }
 
 /* ─── מסמכים משפטיים ─── */
 .doc { padding: 40px 0 64px; }
-.doc h1 { font-size: 32px; }
+.doc h1 { font-size: 32px; font-weight: 700; }
 .doc h2 { font-size: 21px; margin-top: 32px; }
+.doc h2::after { display: none; }
 .doc .meta { color: var(--muted); font-size: 15px; }
 
-footer.site {
-  border-top: 1px solid var(--border); padding: 28px 0; color: var(--muted); font-size: 15px;
+/* מדיניות פרטיות דו-לשונית של אפליקציות (עברית/אנגלית בתוך העמוד) */
+.policy .lang-switch { display: flex; gap: 10px; margin-bottom: 28px; }
+.policy .lang-btn {
+  font: inherit; font-size: 14px; font-weight: 500; padding: 5px 18px; cursor: pointer;
+  border: 1px solid var(--primary); border-radius: 999px; background: transparent; color: var(--primary);
 }
-footer.site a { margin-inline-end: 16px; }
+.policy .lang-btn.active { background: var(--primary); color: var(--on-primary); }
+.policy .section { display: none; padding: 0; }
+.policy .section.active { display: block; }
+.policy .he { direction: rtl; text-align: right; }
+.policy .en { direction: ltr; text-align: left; }
+.policy h1 { padding-bottom: 12px; margin: 0 0 8px; border-bottom: 1px solid var(--border); }
+.policy h3 { margin-top: 20px; }
+.policy ul, .policy ol { padding-inline-start: 22px; margin: 0 0 12px; }
+.policy .updated { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
+.policy .contact {
+  background: var(--surface); border: 1px solid var(--border);
+  padding: 4px 16px; border-radius: 12px; margin-top: 16px;
+}
+.policy .note {
+  background: color-mix(in srgb, #f2b84b 14%, var(--surface));
+  border-inline-start: 4px solid #e0a030; padding: 10px 16px; border-radius: 8px; margin: 16px 0;
+}
+
+/* ─── תחתית ─── */
+footer.site {
+  border-top: 1px solid var(--border); padding: 24px 0; color: var(--muted); font-size: 15px;
+}
+footer.site .foot-row { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 6px 0; }
+footer.site a { color: var(--muted); }
+footer.site a:hover { color: var(--primary); }
