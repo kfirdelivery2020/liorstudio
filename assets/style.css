@@ -216,3 +216,11 @@ html[dir="rtl"] .app-piki {
 .app-piki p { color: #4a6b65; }
 .app-piki .btn.off { background: rgba(12, 133, 116, .08); color: #0C8574; border-color: rgba(12, 133, 116, .5); }
 .app-piki:hover { box-shadow: 0 10px 26px rgba(255, 150, 64, .25); }
+
+/* לוגואים בכרטיסים */
+.card-head { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.card-head h3 { margin: 0; }
+.card .logo {
+  width: 52px; height: 52px; flex: none; border-radius: 14px; object-fit: cover;
+  background: #fff; box-shadow: 0 2px 8px rgba(0, 0, 0, .2);
+}
