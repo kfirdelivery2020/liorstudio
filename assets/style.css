@@ -164,3 +164,39 @@ footer.site {
 footer.site .foot-row { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 6px 0; }
 footer.site a { color: var(--muted); }
 footer.site a:hover { color: var(--primary); }
+
+/* ─── צבעי האפליקציות (נלקחו מערכות הצבעים באנדרואיד סטודיו) ─── */
+.card {
+  --accent: var(--primary); --accent-2: var(--accent);
+  --on-accent: var(--on-primary); --tint: var(--surface);
+  position: relative; overflow: hidden;
+  background: color-mix(in srgb, var(--tint) 75%, var(--bg));
+}
+.card::before {
+  content: ""; position: absolute; inset-inline: 0; top: 0; height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+.card h3 { color: var(--accent); }
+.card:hover {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  box-shadow: 0 8px 22px color-mix(in srgb, var(--accent) 14%, transparent);
+}
+.card .btn { background: var(--accent); color: var(--on-accent); }
+.card .btn.off {
+  background: transparent; color: var(--muted);
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+}
+.card .tag { background: var(--accent-2); color: #2a1a00; }
+.app-ci  { --accent: #5B3FE4; --accent-2: #8C75F0; --tint: #F4EFFF; }
+.app-cf  { --accent: #2563EB; --accent-2: #60A5FA; --tint: #EFF6FF; }
+.app-al  { --accent: #00796B; --accent-2: #FFA000; --tint: #E6F3F1; }
+.app-kd  { --accent: #6B2BC9; --accent-2: #FFCB45; --tint: #F1E8FC; }
+.app-piki { --accent: #0C8574; --accent-2: #FF9640; --tint: #E3F8F4; }
+@media (prefers-color-scheme: dark) {
+  .card { --tint: color-mix(in srgb, var(--accent) 14%, var(--surface)); }
+  .app-ci  { --accent: #8C75F0; --accent-2: #B9A6FF; --on-accent: #140b38; }
+  .app-cf  { --accent: #60A5FA; --accent-2: #93C5FD; --on-accent: #06213f; }
+  .app-al  { --accent: #4DB6AC; --accent-2: #FFA000; --on-accent: #00201C; }
+  .app-kd  { --accent: #B58AF0; --accent-2: #FFCB45; --on-accent: #1b0e3a; }
+  .app-piki { --accent: #38D3BA; --accent-2: #FFB067; --on-accent: #04231E; }
+}
