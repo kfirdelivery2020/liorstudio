@@ -194,10 +194,25 @@ html[dir="rtl"] .card {
 .app-ci { --g1: #2D1B69; --g2: #5B3FE4; --glow: rgba(140, 117, 240, .75); --glow2: rgba(214, 200, 251, .25); --btn: #F4EFFF; --btn-ink: #3F2A95; }
 /* CourierFinance — כחול, עם ירוק הכנסות */
 .app-cf { --g1: #1D4ED8; --g2: #2563EB; --glow: rgba(96, 165, 250, .7); --glow2: rgba(22, 163, 74, .45); --btn: #DBEAFE; --btn-ink: #1D4ED8; }
-/* Alertly — טורקיז וענבר */
-.app-al { --g1: #00695C; --g2: #00796B; --glow: rgba(255, 160, 0, .55); --glow2: rgba(77, 182, 172, .55); --btn: #FFA000; --btn-ink: #1a1000; --tag: #FFA000; }
+/* Alertly — טורקיז עמוק (כמו מצב הכהה שלה) וענבר */
+.app-al { --g1: #06302B; --g2: #00796B; --glow: rgba(255, 160, 0, .5); --glow2: rgba(77, 182, 172, .35); --btn: #FFA000; --btn-ink: #1a1000; --tag: #FFA000; }
 /* K Delivery — סגול, צהוב וקורל */
 .app-kd { --g1: #3A1670; --g2: #6B2BC9; --glow: rgba(255, 203, 69, .6); --glow2: rgba(255, 107, 91, .55); --btn: #FFCB45; --btn-ink: #1B1430; --tag: #FF6B5B; }
 .app-kd .tag { color: #fff; }
-/* Piki — טורקיז וכתום */
-.app-piki { --g1: #0A6B5D; --g2: #0C8574; --glow: rgba(255, 150, 64, .6); --glow2: rgba(20, 184, 160, .6); --btn: #FF9640; --btn-ink: #2a1200; --tag: #FF9640; }
+/* Piki — מנטה בהיר וכתום, כמו הממשק הבהיר של האפליקציה */
+.app-piki {
+  --btn: #0C8574; --btn-ink: #fff; --tag: #FF9640;
+  color: #0F2E29;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(255, 150, 64, .35) 0, transparent 50%),
+    linear-gradient(135deg, #D8F1EB, #E9FAF6);
+}
+html[dir="rtl"] .app-piki {
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255, 150, 64, .35) 0, transparent 50%),
+    linear-gradient(225deg, #D8F1EB, #E9FAF6);
+}
+.app-piki h3 { color: #0C8574; }
+.app-piki p { color: #4a6b65; }
+.app-piki .btn.off { background: rgba(12, 133, 116, .08); color: #0C8574; border-color: rgba(12, 133, 116, .5); }
+.app-piki:hover { box-shadow: 0 10px 26px rgba(255, 150, 64, .25); }
