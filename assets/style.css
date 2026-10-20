@@ -321,3 +321,22 @@ html[dir="rtl"] .app-piki {
 .nf .code { font-size: clamp(72px, 18vw, 140px); font-weight: 700; line-height: 1; color: var(--primary); letter-spacing: -.02em; }
 .nf p { margin: 8px auto; max-width: 40ch; color: var(--muted); }
 .nf .btn { margin: 20px 6px 0; }
+
+/* ─── דף מוצר ─── */
+.product-hero { padding: 28px; margin-bottom: 8px; }
+.product-hero:hover { transform: none; box-shadow: none; }
+.product-hero .card-head { gap: 16px; }
+.product-hero .card-head .logo { width: 72px; height: 72px; }
+.product-hero h1 { margin: 0; color: #fff; font-size: 32px; }
+.product-hero p { max-width: 56ch; font-size: 17px; line-height: 1.7; }
+.product-hero .btns { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+.product-hero .btn.alt { background: rgba(255, 255, 255, .14); color: #fff; border: 1px solid rgba(255, 255, 255, .5); }
+.feats { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); margin: 12px 0 8px; }
+.feat { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 18px; }
+.feat h3 { margin: 0 0 6px; font-size: 17px; }
+.feat p { margin: 0; color: var(--muted); font-size: 15px; }
+.doc .steps { padding-inline-start: 22px; }
+.doc .steps li { margin-bottom: 8px; max-width: 68ch; }
+.card .btns { display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; }
+.card .btns .btn { margin-top: 0; }
+.card .btn.alt { background: rgba(255, 255, 255, .14); color: #fff; border: 1px solid rgba(255, 255, 255, .5); }
