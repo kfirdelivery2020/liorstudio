@@ -340,3 +340,10 @@ html[dir="rtl"] .app-piki {
 .card .btns { display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; }
 .card .btns .btn { margin-top: 0; }
 .card .btn.alt { background: rgba(255, 255, 255, .14); color: #fff; border: 1px solid rgba(255, 255, 255, .5); }
+
+/* כפתורים: אותו גובה ורוחב מתאים, מיושרים גם כשעוברים לשורה חדשה */
+.btns { display: flex; gap: 10px; flex-wrap: wrap; }
+.btns .btn { flex: 1 1 auto; justify-content: center; text-align: center; border: 1px solid transparent; box-sizing: border-box; min-height: 40px; }
+.card .btns .btn.alt, .product-hero .btns .btn.alt { background: rgba(255, 255, 255, .14); color: #fff; border-color: rgba(255, 255, 255, .5); }
+.product-hero .btns .btn { flex: 0 1 auto; min-width: 180px; }
+.card .btns { align-self: stretch; width: 100%; }
