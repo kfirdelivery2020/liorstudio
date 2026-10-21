@@ -347,3 +347,10 @@ html[dir="rtl"] .app-piki {
 .card .btns .btn.alt, .product-hero .btns .btn.alt { background: rgba(255, 255, 255, .14); color: #fff; border-color: rgba(255, 255, 255, .5); }
 .product-hero .btns .btn { flex: 0 1 auto; min-width: 180px; }
 .card .btns { align-self: stretch; width: 100%; }
+.product-hero .card-head h1 { min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 480px) {
+  .product-hero { padding: 22px; }
+  .product-hero h1 { font-size: 26px; }
+  .product-hero .card-head { gap: 12px; }
+  .product-hero .card-head .logo { width: 60px; height: 60px; flex: none; }
+}
