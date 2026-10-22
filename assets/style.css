@@ -555,7 +555,7 @@ button.btn { font: inherit; cursor: pointer; }
 /* ─── אודות: תמונה (מופיעה רק כשיש קובץ ב-assets/about/) ─── */
 .maker { display: flex; align-items: center; gap: 20px; margin: 8px 0 12px; max-width: 68ch; }
 .maker p { margin: 0; }
-.maker-photo { flex: none; width: 128px; height: 128px; border-radius: 50%; overflow: hidden; border: 3px solid var(--border); box-shadow: 0 6px 18px rgba(0, 0, 0, .15); }
+.maker-photo { flex: none; width: 168px; height: 168px; border-radius: 24px; overflow: hidden; border: 3px solid var(--border); box-shadow: 0 6px 18px rgba(0, 0, 0, .15); }
 .maker-photo[hidden] { display: none; }
 .maker-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 @media (max-width: 480px) { .maker { flex-direction: column; align-items: flex-start; } }
