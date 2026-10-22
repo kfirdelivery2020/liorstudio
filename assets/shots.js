@@ -39,8 +39,44 @@
     })(1);
   }
 
+  // תצוגת בדיקה: הוספת ?shots=demo לכתובת מציגה מסגרות ריקות כדי לראות איך זה ייראה
+  function demo(box) {
+    var phones = box.classList.contains('phones');
+    var n = phones ? 4 : 3;
+    for (var i = 1; i <= n; i++) {
+      var ph = document.createElement('div'); ph.className = 'ph'; ph.textContent = i;
+      if (phones) { var f = document.createElement('div'); f.className = 'phone'; f.appendChild(ph); box.appendChild(f); }
+      else box.appendChild(ph);
+    }
+    var sec = box.closest('.gallery'); if (sec) sec.hidden = false;
+  }
+
+  // תמונת בעל העסק בדף אודות: assets/about/<שם>.png|jpg|webp, מופיעה רק אם הקובץ קיים
+  function photo(box) {
+    var name = box.getAttribute('data-photo');
+    var k = 0;
+    (function next() {
+      if (k >= EXT.length) return;
+      var src = base + 'assets/about/' + name + '.' + EXT[k++];
+      var im = new Image();
+      im.onload = function () {
+        im.alt = box.getAttribute('data-alt') || '';
+        box.appendChild(im); box.hidden = false;
+      };
+      im.onerror = next;
+      im.src = src;
+    })();
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
+    var isDemo = /[?&]shots=demo/.test(location.search);
     var boxes = document.querySelectorAll('[data-shots]');
-    for (var i = 0; i < boxes.length; i++) fill(boxes[i]);
+    for (var i = 0; i < boxes.length; i++) { if (isDemo) demo(boxes[i]); else fill(boxes[i]); }
+    var photos = document.querySelectorAll('[data-photo]');
+    for (var j = 0; j < photos.length; j++) photo(photos[j]);
+    if (isDemo) {
+      var ph = document.querySelectorAll('[data-photo]');
+      for (var m = 0; m < ph.length; m++) { ph[m].hidden = false; ph[m].classList.add('demo'); ph[m].textContent = ':)'; }
+    }
   });
 })();

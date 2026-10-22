@@ -20,3 +20,17 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 })();
+
+// כפתור שיתוף: מופיע רק בדפדפנים שתומכים (בעיקר בטלפון) ופותח את תפריט השיתוף של המכשיר
+(function () {
+  document.addEventListener('DOMContentLoaded', function () {
+    var btns = document.querySelectorAll('[data-share]');
+    if (!btns.length || !navigator.share) return;
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].hidden = false;
+      btns[i].addEventListener('click', function () {
+        navigator.share({ title: document.title, url: location.href.split('#')[0].split('?')[0] }).catch(function () {});
+      });
+    }
+  });
+})();

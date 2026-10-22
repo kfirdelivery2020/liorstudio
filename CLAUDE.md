@@ -26,7 +26,10 @@
 - `courierinfo.html`, `courierfinance.html`, `alertly.html`, `kdelivery.html` — דף מוצר לכל אפליקציה
 - `privacy.html`, `terms.html`, `*-privacy.html`, `courierfinance-delete-account.html` — מסמכים משפטיים
 - `assets/style.css` — כל העיצוב, משתני צבע בראש הקובץ. בכל שינוי בו מעלים את `?v=` בקישור ב-HTML (מטמון)
-- `assets/menu.js` — תפריט המבורגר וצל סרגל; `assets/theme.js` — מצב כהה; `assets/shots.js` — צילומי מסך מ-`assets/screens/` (מופיעים רק אם יש קבצים)
+- `assets/menu.js` — תפריט המבורגר, צל סרגל וכפתור שיתוף; `assets/theme.js` — מצב כהה; `assets/a11y.js` — תפריט נגישות עצמאי (בלי תוסף חיצוני)
+- `assets/shots.js` — צילומי מסך מ-`assets/screens/` ותמונת בעל העסק מ-`assets/about/maker.*` (מופיעים רק אם יש קבצים; `?shots=demo` מציג מסגרות לבדיקה)
+- `accessibility.html` — הצהרת נגישות. האתר לא מציב עוגיות (localStorage בלבד, מוסבר בדף הפרטיות), ולכן אין אנר עוגיות
+- `piki.html` — דף תצוגה של Piki, מוסתר (`noindex`, לא מקושר) עד שיוחלט לקשר אליו
 - `assets/favicon.svg`, `assets/og.png` — מותג זמני עד שיגיע לוגו מעוצב
 - `.nojekyll` — GitHub Pages מגיש כמו שהוא
 
