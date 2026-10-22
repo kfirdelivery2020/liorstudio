@@ -12,3 +12,11 @@
     });
   });
 })();
+
+// צל לסרגל העליון כשגוללים
+(function () {
+  var root = document.documentElement;
+  function onScroll() { root.classList.toggle('scrolled', (window.pageYOffset || root.scrollTop) > 4); }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
