@@ -20,9 +20,14 @@
 - **Piki** — בפיתוח, "בקרוב" בלבד
 
 ## מבנה
-- `index.html` — דף בית: מי אנחנו, אפליקציות, יצירת קשר
-- `privacy.html`, `terms.html` — מסמכים כלליים של הסטודיו
-- `assets/style.css` — כל העיצוב, משתני צבע בראש הקובץ
+- כל דף קיים פעמיים: בעברית בשורש ובאנגלית ב-`en/` (אותו שם קובץ). שינוי בדף אחד דורש התאמה בשני.
+- `index.html` — דף בית: כותרת וכרטיסי האפליקציות
+- `about.html`, `contact.html` — אודות ויצירת קשר (פרטי בעל העסק ב-contact, לא בדף הבית)
+- `courierinfo.html`, `courierfinance.html`, `alertly.html`, `kdelivery.html` — דף מוצר לכל אפליקציה
+- `privacy.html`, `terms.html`, `*-privacy.html`, `courierfinance-delete-account.html` — מסמכים משפטיים
+- `assets/style.css` — כל העיצוב, משתני צבע בראש הקובץ. בכל שינוי בו מעלים את `?v=` בקישור ב-HTML (מטמון)
+- `assets/menu.js` — תפריט המבורגר וצל סרגל; `assets/theme.js` — מצב כהה; `assets/shots.js` — צילומי מסך מ-`assets/screens/` (מופיעים רק אם יש קבצים)
+- `assets/favicon.svg`, `assets/og.png` — מותג זמני עד שיגיע לוגו מעוצב
 - `.nojekyll` — GitHub Pages מגיש כמו שהוא
 
 ## כללים
