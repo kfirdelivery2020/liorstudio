@@ -503,11 +503,6 @@ a.card.mini:hover { transform: translateY(-2px); }
 .app-piki.product-hero p { color: #34554F; }
 :root[data-theme="dark"] .app-piki.product-hero p { color: #9BB6B0; }
 
-/* ─── תג Google Play הרשמי (מוצג רק לאפליקציה שפורסמה) ─── */
-.store { display: inline-block; line-height: 0; }
-.store img { height: 56px; width: auto; display: block; margin: -8px -6px; }
-.btns .store { flex: 0 0 auto; align-self: center; }
-
 /* ─── תקציר במסמכים משפטיים ─── */
 .summary { background: var(--surface); border: 1px solid var(--border); border-inline-start: 4px solid var(--primary); border-radius: 12px; padding: 14px 18px; margin: 18px 0; }
 .summary strong { display: block; margin-bottom: 4px; }
