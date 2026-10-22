@@ -408,7 +408,7 @@ header.site .brand { position: absolute; left: 50%; top: 50%; transform: transla
 
 /* אייקונים ליכולות בדפי מוצר (צבע לפי האפליקציה) */
 .feat::before { content: ""; display: block; width: 28px; height: 28px; margin-bottom: 10px; background: var(--g2); -webkit-mask: var(--ico) center / contain no-repeat; mask: var(--ico) center / contain no-repeat; }
-:root[data-theme="dark"] .feat::before { background: color-mix(in srgb, var(--g2) 55%, #fff); }
+:root[data-theme="dark"] .feat::before { background: color-mix(in srgb, var(--g2, var(--primary)) 55%, #fff); }
 .feat[data-i="grid"] { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z'/%3E%3C/svg%3E"); }
 .feat[data-i="backup"] { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 16V4M7 9l5-5 5 5M4 16v4h16v-4'/%3E%3C/svg%3E"); }
 .feat[data-i="filter"] { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 5h18l-7 8v6l-4 2v-8L3 5z'/%3E%3C/svg%3E"); }
@@ -474,3 +474,56 @@ footer.site a:hover { text-decoration: underline; }
   .foot-col a { overflow-wrap: anywhere; }
 }
 @media (max-width: 560px) { .foot-col:last-child { grid-column: 1 / -1; } .foot-col:last-child a { overflow-wrap: normal; } }
+
+/* ─── שאלות נפוצות ─── */
+.faq { margin: 8px 0 8px; max-width: 720px; }
+.faq details { border: 1px solid var(--border); border-radius: 14px; background: var(--surface); margin-bottom: 10px; }
+.faq summary { cursor: pointer; padding: 14px 16px; font-weight: 500; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; flex: none; width: 24px; height: 24px; line-height: 22px; text-align: center; border-radius: 999px; border: 1px solid var(--border); color: var(--primary); font-weight: 400; }
+.faq details[open] summary::after { content: "\2212"; }
+.faq details p { margin: 0; padding: 0 16px 16px; color: var(--muted); }
+.feat::before { background: var(--g2, var(--primary)); }
+
+/* ─── "עוד אפליקציות" ─── */
+.more { margin-top: 8px; }
+.card.mini { flex-direction: row; align-items: center; gap: 14px; text-decoration: none; color: #fff; }
+.card.mini .mini-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.card.mini b { font-size: 17px; }
+.card.mini .mini-text span { font-size: 14px; opacity: .92; }
+a.card.mini:hover { transform: translateY(-2px); }
+.card.mini.app-piki { color: #0F2E29; }
+.card.mini.app-piki b { color: #08665A; }
+.card.mini.app-piki .mini-text span { color: #34554F; }
+:root[data-theme="dark"] .card.mini.app-piki { color: #E7F5F1; }
+:root[data-theme="dark"] .card.mini.app-piki b { color: #38D3BA; }
+:root[data-theme="dark"] .card.mini.app-piki .mini-text span { color: #9BB6B0; }
+.app-piki.product-hero h1 { color: #08665A; }
+:root[data-theme="dark"] .app-piki.product-hero h1 { color: #38D3BA; }
+.app-piki.product-hero p { color: #34554F; }
+:root[data-theme="dark"] .app-piki.product-hero p { color: #9BB6B0; }
+
+/* ─── תג Google Play הרשמי (מוצג רק לאפליקציה שפורסמה) ─── */
+.store { display: inline-block; line-height: 0; }
+.store img { height: 56px; width: auto; display: block; margin: -8px -6px; }
+.btns .store { flex: 0 0 auto; align-self: center; }
+
+/* ─── תקציר במסמכים משפטיים ─── */
+.summary { background: var(--surface); border: 1px solid var(--border); border-inline-start: 4px solid var(--primary); border-radius: 12px; padding: 14px 18px; margin: 18px 0; }
+.summary strong { display: block; margin-bottom: 4px; }
+.summary p { margin: 0; color: var(--muted); }
+
+/* עוגנים לא מוסתרים מתחת לסרגל הדביק */
+html { scroll-padding-top: 84px; }
+
+/* ─── כניסה עדינה לכרטיסים ─── */
+@media (prefers-reduced-motion: no-preference) {
+  html.js .reveal { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
+  html.js .reveal.in { opacity: 1; transform: none; }
+}
+
+/* ─── מעבר רך בין דפים (בדפדפנים שתומכים) ─── */
+@view-transition { navigation: auto; }
+header.site { view-transition-name: site-header; }
+@media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
+:root[data-theme="dark"] .feat::before { background: color-mix(in srgb, var(--g2, var(--primary)) 55%, #fff); }

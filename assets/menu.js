@@ -20,3 +20,28 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 })();
+
+// כניסה עדינה של כרטיסים בגלילה. רכיבים שכבר נראים לא מונפשים, ובלי JS הכל גלוי.
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.addEventListener('DOMContentLoaded', function () {
+    var els = document.querySelectorAll('.card, .feat, .phone, .faq details, .summary');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var t = e.target;
+        t.classList.add('in');
+        io.unobserve(t);
+        // מסירים את המחלקות אחרי הכניסה, כדי שאפקט ההרחפה של הכרטיסים ימשיך לעבוד
+        setTimeout(function () { t.classList.remove('reveal', 'in'); }, 700);
+      });
+    }, { threshold: 0.08 });
+    for (var i = 0; i < els.length; i++) {
+      var r = els[i].getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) continue;
+      els[i].classList.add('reveal');
+      io.observe(els[i]);
+    }
+  });
+})();
