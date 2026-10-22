@@ -19,10 +19,10 @@
   <meta name="description" content="Lior Studio הוא סטודיו עצמאי בישראל שבונה אפליקציות לאנדרואיד ול-iOS.">
   <link rel="alternate" hreflang="he" href="https://liorsstudio.com/">
   <link rel="alternate" hreflang="en" href="https://liorsstudio.com/en/">
-  <link rel="stylesheet" href="assets/style.css?v=15">
-  <script src="assets/theme.js"></script>
-  <script src="assets/menu.js" defer></script>
-  <script src="assets/shots.js" defer></script>
+  <link rel="stylesheet" href="assets/style.css?v=16">
+  <script src="assets/theme.js?v=3"></script>
+  <script src="assets/menu.js?v=3" defer></script>
+  <script src="assets/shots.js?v=3" defer></script>
 </head>
 <body>
   <header class="site">
@@ -57,14 +57,14 @@
           <div class="card-head"><span class="logo"><img src="assets/logos/courierinfo.png" alt="" width="52" height="52"></span><h3>CourierInfo</h3></div>
           <p>מידע חכם לשליחים: מציגה את המרחק בק״מ של משלוחים במגוון אפליקציות משלוחים, כדי שתדעו מיד אם המשלוח משתלם.</p>
           <div class="shots" data-shots="courierinfo" data-alt="CourierInfo" data-max="4"></div>
-          <div class="btns"><a class="btn" href="https://play.google.com/store/apps/details?id=com.courierinfo.app"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M7 4.5v15a1 1 0 0 0 1.5.85l12-7.5a1 1 0 0 0 0-1.7l-12-7.5A1 1 0 0 0 7 4.5z"/></svg><span>הורדה ב-Google Play</span></a>
+          <div class="btns"><a class="btn" href="https://play.google.com/store/apps/details?id=com.courierinfo.app"><img class="gp" src="assets/google-play-icon.svg" alt="" width="17" height="18"><span>הורדה ב-Google Play</span></a>
           <a class="btn alt" href="courierinfo.html">פרטים נוספים</a></div>
         </div>
         <div class="card app-cf">
           <div class="card-head"><span class="logo"><img src="assets/logos/courierfinance.png" alt="" width="52" height="52"></span><h3>CourierFinance</h3></div>
           <p>מעקב הכנסות והוצאות לשליחים, כדי לדעת כמה באמת מרוויחים.</p>
           <div class="shots" data-shots="courierfinance" data-alt="CourierFinance" data-max="4"></div>
-          <div class="btns"><span class="btn off" aria-disabled="true"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M7 4.5v15a1 1 0 0 0 1.5.85l12-7.5a1 1 0 0 0 0-1.7l-12-7.5A1 1 0 0 0 7 4.5z"/></svg><span>בקרוב ב-Google Play</span></span><a class="btn alt" href="courierfinance.html">פרטים נוספים</a></div><!-- TODO: Google Play link -->
+          <div class="btns"><span class="btn off" aria-disabled="true"><img class="gp" src="assets/google-play-icon.svg" alt="" width="17" height="18"><span>בקרוב ב-Google Play</span></span><a class="btn alt" href="courierfinance.html">פרטים נוספים</a></div><!-- TODO: Google Play link -->
         </div>
         <div class="card app-piki">
           <div class="card-head"><span class="logo"><img src="assets/logos/piki-courier.png" alt="" width="52" height="52"></span><h3>Piki לשליחים <span class="tag">בקרוב</span></h3></div>
@@ -78,7 +78,7 @@
           <div class="card-head"><span class="logo"><img src="assets/logos/alertly.png" alt="" width="52" height="52"></span><h3>Alertly</h3></div>
           <p>בוררת התראות לפי מילות מפתח, ומציגה רק את מה שחשוב לכם. מתאימה לכולם.</p>
           <div class="shots" data-shots="alertly" data-alt="Alertly" data-max="4"></div>
-          <div class="btns"><span class="btn off" aria-disabled="true"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M7 4.5v15a1 1 0 0 0 1.5.85l12-7.5a1 1 0 0 0 0-1.7l-12-7.5A1 1 0 0 0 7 4.5z"/></svg><span>בקרוב ב-Google Play</span></span><a class="btn alt" href="alertly.html">פרטים נוספים</a></div><!-- TODO: Google Play link -->
+          <div class="btns"><span class="btn off" aria-disabled="true"><img class="gp" src="assets/google-play-icon.svg" alt="" width="17" height="18"><span>בקרוב ב-Google Play</span></span><a class="btn alt" href="alertly.html">פרטים נוספים</a></div><!-- TODO: Google Play link -->
         </div>
         <div class="card app-piki">
           <div class="card-head"><span class="logo"><img src="assets/logos/piki-restaurant.png" alt="" width="52" height="52"></span><h3>Piki למסעדות <span class="tag">בקרוב</span></h3></div>
@@ -96,7 +96,7 @@
           <div class="card-head"><span class="logo"><img src="assets/logos/kdelivery.png" alt="" width="52" height="52"></span><h3>K Delivery</h3></div>
           <p>שירות המשלוחים שלנו: משלוחים פרטיים בחריש.</p>
           <div class="shots" data-shots="kdelivery" data-alt="K Delivery" data-max="4"></div>
-          <div class="btns"><span class="btn off" aria-disabled="true"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M7 4.5v15a1 1 0 0 0 1.5.85l12-7.5a1 1 0 0 0 0-1.7l-12-7.5A1 1 0 0 0 7 4.5z"/></svg><span>בקרוב ב-Google Play</span></span><a class="btn alt" href="kdelivery.html">פרטים נוספים</a></div><!-- TODO: Google Play link -->
+          <div class="btns"><span class="btn off" aria-disabled="true"><img class="gp" src="assets/google-play-icon.svg" alt="" width="17" height="18"><span>בקרוב ב-Google Play</span></span><a class="btn alt" href="kdelivery.html">פרטים נוספים</a></div><!-- TODO: Google Play link -->
         </div>
       </div>
     </section>  </main>

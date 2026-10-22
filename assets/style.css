@@ -511,14 +511,9 @@ a.card.mini:hover { transform: translateY(-2px); }
 /* עוגנים לא מוסתרים מתחת לסרגל הדביק */
 html { scroll-padding-top: 84px; }
 
-/* ─── כניסה עדינה לכרטיסים ─── */
-@media (prefers-reduced-motion: no-preference) {
-  html.js .reveal { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
-  html.js .reveal.in { opacity: 1; transform: none; }
-}
-
 /* ─── מעבר רך בין דפים (בדפדפנים שתומכים) ─── */
 @view-transition { navigation: auto; }
 header.site { view-transition-name: site-header; }
 @media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
 :root[data-theme="dark"] .feat::before { background: color-mix(in srgb, var(--g2, var(--primary)) 55%, #fff); }
+.btn img.gp { height: 18px; width: auto; display: block; flex: none; }
