@@ -566,3 +566,14 @@ button.btn { font: inherit; cursor: pointer; }
 .shots .ph { height: 200px; width: 92px; flex: none; aspect-ratio: auto; border-radius: 16px; border: 3px solid rgba(255, 255, 255, .35); font-size: 20px; }
 .maker-photo.demo { display: flex; align-items: center; justify-content: center; background: #2a2a34; color: #8a8aa0; font-size: 30px; }
 .btn[hidden] { display: none; }
+
+/* לוגו מלא: גרסה בהירה (רקע לבן) ותכולה כהה (רקע שחור); ה-blend מעלים את הרקע של ה-JPG */
+.lockup { display: block; width: 220px; max-width: 70%; height: auto; margin: 0 auto 24px; }
+.lockup-light { mix-blend-mode: multiply; }
+.lockup-dark { display: none; mix-blend-mode: screen; }
+:root[data-theme="dark"] .lockup-light { display: none; }
+:root[data-theme="dark"] .lockup-dark { display: block; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .lockup-light { display: none; }
+  :root:not([data-theme]) .lockup-dark { display: block; }
+}
