@@ -7,8 +7,8 @@
 (`liorstudio`, אירוח ב-GitHub Pages). אסור לייבא ממנה או אליה קוד של Piki.
 
 ## פרטי העסק
-- דומיין: `liorsstudio.com` (שים לב: שתי s ב-liorsstudio, שונה משם הריפוזיטורי `liorstudio`). עדיין לא מקושר ל-GitHub Pages — יקושר בהמשך.
-- אימייל ליצירת קשר: כרגע Gmail. אחרי חיבור הדומיין להחליף לכתובת בדומיין (למשל `contact@liorsstudio.com`) — גוגל מעדיפים אימייל בדומיין העסק.
+- דומיין: `liorsstudio.com` (שים לב: שתי s ב-liorsstudio, שונה משם הריפוזיטורי `liorstudio`). מקושר ל-GitHub Pages (קובץ `CNAME`, HTTPS פעיל). ה-DNS ב-GoDaddy.
+- אימייל ליצירת קשר: `contact@liorsstudio.com`. זו העברה (ImprovMX, תוכנית חינמית) לתיבת ה-Gmail של בעל העסק, לא תיבה נפרדת. ב-GoDaddy: MX ל-`mx1.improvmx.com` (10) ול-`mx2.improvmx.com` (20), ו-TXT של SPF `v=spf1 include:spf.improvmx.com ~all`. אל תחזיר MX של Google ואל תמחק אותם בלי תיבה חלופית. תשובות יוצאות מכתובת ה-Gmail (שליחה מהדומיין דורשת SMTP בתשלום). ב-Gmail יש מסנן "Never send to Spam" לכתובת. הכתובת חייבת להתאים גם ל-Play Console ולמדיניות הפרטיות של כל אפליקציה (ריפוזיטורים `courierinfo-privacy` ו-`courierfinance-privacy`, כבר עודכנו).
 - טלפון: 050-321-2017
 - ריפוזיטורי: `kfirdelivery2020/liorstudio`, ענף `main`, אירוח GitHub Pages.
 
@@ -30,7 +30,7 @@
 - `assets/shots.js` — צילומי מסך מ-`assets/screens/` ותמונת בעל העסק מ-`assets/about/maker.*` (מופיעים רק אם יש קבצים; `?shots=demo` מציג מסגרות לבדיקה)
 - `accessibility.html` — הצהרת נגישות. האתר לא מציב עוגיות (localStorage בלבד, מוסבר בדף הפרטיות), ולכן אין אנר עוגיות
 - `piki.html` — דף תצוגה של Piki, מוסתר (`noindex`, לא מקושר) עד שיוחלט לקשר אליו
-- `assets/favicon.svg`, `assets/og.png` — מותג זמני עד שיגיע לוגו מעוצב
+- לוגו: `assets/lockup-light.png` ו-`assets/lockup-dark.png` (לוגו מלא עם טקסט, PNG שקוף) בסרגל העליון של כל הדפים, מתחלפים לפי מצב בהיר/כהה ב-CSS. `assets/favicon.png`, `assets/apple-touch-icon.png` ו-`assets/og.png` נגזרים מאותו לוגו. לוגואים של Piki: `assets/logos/piki-*.png` (מאיקוני האפליקציות; Piki עדיין "בקרוב")
 - `.nojekyll` — GitHub Pages מגיש כמו שהוא
 
 ## כללים
@@ -38,4 +38,5 @@
 - אין נתונים שאינם אמיתיים: כתובת, אימייל, שם רשום ו-D-U-N-S חייבים להתאים בדיוק
   למה שמוגש לגוגל. מקומות שממתינים למידע מסומנים `TODO:` בקבצים.
 - אין קבצי מפתחות, אין טפסים שאוספים מידע, אין סקריפטים חיצוניים ואין אנליטיקס.
-- דומיין וכתובת אימייל עסקית (לא Gmail) נדרשים לפני הגשה לגוגל.
+- דומיין וכתובת אימייל עסקית (לא Gmail) נדרשים לפני הגשה לגוגל: שניהם קיימים (ראה למעלה).
+- הפורטל של CourierFinance (`courierinfo-a8750.web.app`) הוא פרויקט נפרד, `C:/Users/kfiry/courier-portal`, ומקושר מהתפריט. האתר הזה לא טוען ממנו כלום.
